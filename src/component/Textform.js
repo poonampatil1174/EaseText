@@ -21,6 +21,7 @@ function Textform(props) {
         setText(up);
     }
 
+
     // speak
     const speak = () => 
     {
@@ -29,8 +30,21 @@ function Textform(props) {
         window.speechSynthesis.speak(msg);
       }
 
+    //copy
+    const handlecopy=()=>
+    {
+        var text=document.getElementById("myBox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+    }
     
-    
+    //remove extra spaces
+    const handleextraspace=()=>
+    {
+        let newtext=text.split(/\s+/);
+        setText(newtext.join(" ")); 
+    }
+
     const handleOnChange=(event)=>
         {
             console.log("the uppercase was clicked");
@@ -47,8 +61,11 @@ function Textform(props) {
             </div>
             <button className="btn btn-success mx-2" onClick={handleupperClick} >convert to uppercase</button>
             <button className="btn btn-success mx-2" onClick={handlelowerClick} >convert to uppercase</button>
+            <button className="btn btn-success mx-2" onClick={handlecopy} >copy text</button>
+            <button className="btn btn-success mx-2" onClick={handleextraspace} >remove space</button>
             <button className="btn btn-success mx-2 my-2" onClick={speak} >Speak</button>
             <button className="btn btn-success mx-2" onClick={handleclearClick} >Clear</button>
+            
            
           </div>
         <div class="container my-3">
