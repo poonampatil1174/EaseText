@@ -4,26 +4,28 @@ export default function About()
 {
 
     const [style,setStyle]=useState({
-        color:'white',
-        backgroundColor:'black'
+        color:'black',
+        backgroundColor:'white'
+        
     })
-    const [btntext,setBtntext]=useState("enable dark mode")
+    const [btntext,setBtntext]=useState("enable light mode")
 
     const theme=()=>
     {
-        if(style.color==='white')
+        if(style.color==='black')
         {
             setStyle({
-                color:'black',
-                backgroundColor:'white'
+                color:'white',
+                backgroundColor:'black',
+                border:'1px solid white'
             })
             setBtntext("enable light mode")
         }
         else
         {
             setStyle({
-                color:'white',
-                backgroundColor:'black'
+                color:'black',
+                backgroundColor:'white'
             })
             setBtntext("enable dark mode")
         }
