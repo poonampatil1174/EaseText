@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 function Textform(props) {
     const handleupperClick=()=>
     {
-        console.log("the uppercase was clicked");
+        // console.log("the uppercase was clicked");
         let up=text.toUpperCase();
         setText(up);
     }
     const handlelowerClick=()=>
      {
-        console.log("the lowercase was clicked");
+        // console.log("the lowercase was clicked");
         let up=text.toLowerCase();
         setText(up);
     }
@@ -19,6 +19,16 @@ function Textform(props) {
         let up='';
         setText(up);
     }
+
+    // speak
+    const speak = () => 
+    {
+        let msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        window.speechSynthesis.speak(msg);
+      }
+
+    
     
     const handleOnChange=(event)=>
         {
@@ -36,8 +46,10 @@ function Textform(props) {
             </div>
             <button className="btn btn-success mx-2" onClick={handleupperClick} >convert to uppercase</button>
             <button className="btn btn-success mx-2" onClick={handlelowerClick} >convert to uppercase</button>
+            <button className="btn btn-success mx-2 my-2" onClick={speak} >Speak</button>
             <button className="btn btn-success mx-2" onClick={handleclearClick} >Clear</button>
-        </div>
+           
+          </div>
         <div class="container my-3">
             <h2>your text summury</h2>
             <p>{text.split(" ").length} words and {text.length} charaters</p>
