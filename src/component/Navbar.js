@@ -1,4 +1,5 @@
 import React from 'react'
+
 import PropTypes from 'prop-types'//this is import for impt boz should not give err
 
 
@@ -16,10 +17,10 @@ import PropTypes from 'prop-types'//this is import for impt boz should not give 
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
+          <a className="nav-link active" aria-current="page" href="Textform.js">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">{props.abouttext}</a>
+          <a className="nav-link" href="About.js">{props.abouttext}</a>
         </li>   
       </ul>
       <form className="d-flex">
