@@ -59,16 +59,16 @@ function Textform(props) {
             <div className="mb-3">
                 <textarea className="form-control" id="myBox" value={text} onChange={handleOnChange} rows="8" style={{backgroundColor:props.mode==='grey'?'light':'dark', color:props.mode==='dark'?'white':'black'}} ></textarea>
             </div>
-            <button className="btn btn-success mx-2" onClick={handleupperClick} >convert to uppercase</button>
-            <button className="btn btn-success mx-2" onClick={handlelowerClick} >convert to uppercase</button>
-            <button className="btn btn-success mx-2" onClick={handlecopy} >copy text</button>
-            <button className="btn btn-success mx-2" onClick={handleextraspace} >remove space</button>
-            <button className="btn btn-success mx-2 my-2" onClick={speak} >Speak</button>
-            <button className="btn btn-success mx-2" onClick={handleclearClick} >Clear</button>
+            <button className="btn btn-primary mx-2" onClick={handleupperClick} >convert to uppercase</button>
+            <button className="btn btn-primary mx-2" onClick={handlelowerClick} >convert to uppercase</button>
+            <button className="btn btn-primary mx-2" onClick={handlecopy} >copy text</button>
+            <button className="btn btn-primary mx-2" onClick={handleextraspace} >remove space</button>
+            <button className="btn btn-primary mx-2 my-2" onClick={speak} >Speak</button>
+            <button className="btn btn-primary mx-2" onClick={handleclearClick} >Clear</button>
             
            
           </div>
-        <div class="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
+        <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
             <h2>your text summury</h2>
             <p>{text.split(" ").length} words and {text.length} charaters</p>
             <p>{0.008 * text.split(" ").length} it will take minuts read</p>
