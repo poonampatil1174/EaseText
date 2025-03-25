@@ -54,7 +54,7 @@ function Textform(props) {
 
     return (
        <>
-       <div className='container' style={{color:props.mode==='dark'?'white':'black'}}>
+       <div className='container my-3' style={{color:props.mode==='dark'?'white':'black'}}>
             <h1>{props.heading}</h1>
             <div className="mb-3">
                 <textarea className="form-control" id="myBox" value={text} onChange={handleOnChange} rows="8" style={{backgroundColor:props.mode==='grey'?'light':'dark', color:props.mode==='dark'?'white':'black'}} ></textarea>
