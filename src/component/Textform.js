@@ -7,18 +7,21 @@ function Textform(props) {
         // console.log("the uppercase was clicked");
         let up=text.toUpperCase();
         setText(up);
+        props.showAlert(" Converted to Upper Case","success");
     }
     const handlelowerClick=()=>
      {
         // console.log("the lowercase was clicked");
         let up=text.toLowerCase();
         setText(up);
+        props.showAlert(" Converted to Lower Case","success");
     }
      const handleclearClick=()=>
      {
         console.log("the clear text was clicked");
         let up='';
         setText(up);
+        props.showAlert(" Cleared the text","success");
     }
 
 
@@ -28,6 +31,7 @@ function Textform(props) {
         let msg = new SpeechSynthesisUtterance();
         msg.text = text;
         window.speechSynthesis.speak(msg);
+        props.showAlert(" Being spoke","success");
       }
 
     //copy
@@ -36,6 +40,7 @@ function Textform(props) {
         var text=document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert(" Copied the Text","success");
     }
     
     //remove extra spaces
@@ -43,11 +48,12 @@ function Textform(props) {
     {
         let newtext=text.split(/\s+/);
         setText(newtext.join(" ")); 
+        props.showAlert(" Removed the Extra space","success");
     }
 
     const handleOnChange=(event)=>
         {
-            console.log("the uppercase was clicked");
+            console.log(" the uppercase was clicked");
             setText(event.target.value);
         }
     const [text, setText] = useState('');
