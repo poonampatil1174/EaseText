@@ -1,13 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 import PropTypes from 'prop-types'//this is import for impt boz should not give err
+
 
 
 // on line 5 i am sending props in function argument so i can catch it in app.js component
  function Navbar(props) {
   return (
     <div>
-       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
      {/* on line 10 here i have sent props to component in app.js  */}
     <a className="navbar-brand" href="/">{props.title}</a>
@@ -23,10 +24,14 @@ import PropTypes from 'prop-types'//this is import for impt boz should not give 
           <a className="nav-link" href="About.js">{props.abouttext}</a>
         </li>   
       </ul>
-      <form className="d-flex">
+      {/* <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> */}
+      <div className={`form-check form-switch text-${props.mode==='dark'?'light':'dark'}`}>
+      <input className="form-check-input" onClick={props.togglemode} type="checkbox" id="flexSwitchCheckDefault"/>
+      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Darkmode</label>
+</div>
     </div>
   </div>
   </nav>
