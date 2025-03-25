@@ -1,4 +1,5 @@
 import "./App.css";
+
 import Navbar from "./component/Navbar";
 import Textform from "./component/Textform";
 import About from "./component/About";
