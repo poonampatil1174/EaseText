@@ -10,11 +10,13 @@ function App() {
   {
     if(mode === 'light')
     {
-      setMode('dark')
+      setMode('dark');
+      document.body.style.backgroundColor="grey";
     }
     else 
     {
-      setMode('light')
+      setMode('light');
+      document.body.style.backgroundColor="white";
     }
     
   }
@@ -22,7 +24,7 @@ function App() {
     <>
       <Navbar title="EaseText" abouttext="About" mode={mode} togglemode={togglemode}/>
       <div className="container my-3">
-      <Textform heading="Enter the text here to analyze"/>
+      <Textform heading="Enter the text here to analyze" mode={mode}/>
       <About/>
       </div>
     </>

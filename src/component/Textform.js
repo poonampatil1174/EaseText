@@ -54,10 +54,10 @@ function Textform(props) {
 
     return (
        <>
-       <div>
+       <div className='container' style={{color:props.mode==='dark'?'white':'black'}}>
             <h1>{props.heading}</h1>
             <div className="mb-3">
-                <textarea className="form-control" id="myBox" value={text} onChange={handleOnChange} rows="8" ></textarea>
+                <textarea className="form-control" id="myBox" value={text} onChange={handleOnChange} rows="8" style={{backgroundColor:props.mode==='grey'?'light':'dark', color:props.mode==='dark'?'white':'black'}} ></textarea>
             </div>
             <button className="btn btn-success mx-2" onClick={handleupperClick} >convert to uppercase</button>
             <button className="btn btn-success mx-2" onClick={handlelowerClick} >convert to uppercase</button>
@@ -68,12 +68,12 @@ function Textform(props) {
             
            
           </div>
-        <div class="container my-3">
+        <div class="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
             <h2>your text summury</h2>
             <p>{text.split(" ").length} words and {text.length} charaters</p>
             <p>{0.008 * text.split(" ").length} it will take minuts read</p>
             <h2>preview</h2>
-            <p>{text}</p>
+            <p>{text.length>0?text:"Enter Something to preview here"}</p>
         </div>
         </>
     );
